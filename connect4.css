@@ -1,0 +1,49 @@
+/* game board table */
+
+#board td {
+    width: 50px;
+    height: 50px;
+    border: solid 1px #666;
+    position: relative;
+  }
+  
+  /* pieces are div within game table cells: draw as colored circles */
+  
+  .piece {
+    /* TODO: make into circles */
+    margin: 5px;
+    top: -1px;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: solid 1px black;
+    position: absolute;
+    /* adds a movedown animation for eacch piece created for 1s with the ease-in-out transistion */
+    animation: movedown 1s ease-in-out; 
+  
+  }
+  
+  /* TODO: make pieces red/blue,  depending on player 1/2 piece */
+  .p1 {
+    background-color: pink;
+  }
+  
+  .p2 {
+    background-color: purple;
+  }
+  /* column-top is table row of clickable areas for each column */
+  
+  #column-top td {
+    border: dashed 1px lightgray;
+  }
+  
+  #column-top td:hover {
+    background-color: gold;
+  }
+  
+  /* Move down animation - the top of the piece goes to -400px to 0px */
+  @keyframes movedown {
+    from{ top : -400px}
+    to {top: 0 px}
+  }
+  
